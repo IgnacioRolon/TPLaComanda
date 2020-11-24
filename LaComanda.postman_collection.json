@@ -1,0 +1,512 @@
+{
+	"info": {
+		"_postman_id": "28693fb0-30db-4a7f-95f8-6b4abc6ad021",
+		"name": "LaComanda",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Empleados",
+			"item": [
+				{
+					"name": "AddEmpleado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "bartender",
+									"type": "text"
+								},
+								{
+									"key": "contraseña",
+									"value": "bartender",
+									"type": "text"
+								},
+								{
+									"key": "tipo",
+									"value": "bartender",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}empleados",
+							"host": [
+								"{{url}}empleados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LoginEmpleado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nombre",
+									"value": "bartender",
+									"type": "text"
+								},
+								{
+									"key": "contraseña",
+									"value": "bartender",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}empleados/login",
+							"host": [
+								"{{url}}empleados"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CambiarEstadoEmpleado",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "estado",
+									"value": "suspendido",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}empleados/1/estado",
+							"host": [
+								"{{url}}empleados"
+							],
+							"path": [
+								"1",
+								"estado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CambiarTipoEmpleado",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"type": "text",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "tipo",
+									"value": "mozo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}empleados/5/tipo",
+							"host": [
+								"{{url}}empleados"
+							],
+							"path": [
+								"5",
+								"tipo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteEmpleado",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}empleados/1",
+							"host": [
+								"{{url}}empleados"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetEmpleados",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}empleados",
+							"host": [
+								"{{url}}empleados"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Mesas",
+			"item": [
+				{
+					"name": "AddMesa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}mesas",
+							"host": [
+								"{{url}}mesas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CambiarEstadoMesa",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "estado",
+									"value": "con cliente esperando pedido",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}mesas/DXUO8",
+							"host": [
+								"{{url}}mesas"
+							],
+							"path": [
+								"DXUO8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMesas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "estado",
+									"value": "con clientes esperando pedido",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}mesas",
+							"host": [
+								"{{url}}mesas"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Pedidos",
+			"item": [
+				{
+					"name": "NuevoPedido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "codigoMesa",
+									"value": "b84vR",
+									"type": "text"
+								},
+								{
+									"key": "importe",
+									"value": "1100",
+									"type": "text"
+								},
+								{
+									"key": "bebida",
+									"value": "whisky",
+									"type": "text"
+								},
+								{
+									"key": "cerveza",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "comida",
+									"value": "carne",
+									"type": "text"
+								},
+								{
+									"key": "postre",
+									"value": "flan",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}pedidos",
+							"host": [
+								"{{url}}pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPedidos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}pedidos",
+							"host": [
+								"{{url}}pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AsignarPedido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tiempoEstimado",
+									"value": "120",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}pedidos/tomar/5",
+							"host": [
+								"{{url}}pedidos"
+							],
+							"path": [
+								"tomar",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ArticuloListo",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}pedidos/listo/3",
+							"host": [
+								"{{url}}pedidos"
+							],
+							"path": [
+								"listo",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TiempoRestante",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}pedidos/tiempo/?codigoMesa=b84vR&codigoPedido=JNeof",
+							"host": [
+								"{{url}}pedidos"
+							],
+							"path": [
+								"tiempo",
+								""
+							],
+							"query": [
+								{
+									"key": "codigoMesa",
+									"value": "b84vR"
+								},
+								{
+									"key": "codigoPedido",
+									"value": "JNeof"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ServirPedido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}pedidos/servir/U5CXm",
+							"host": [
+								"{{url}}pedidos"
+							],
+							"path": [
+								"servir",
+								"U5CXm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CancelarPedido",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}pedidos/JNeof",
+							"host": [
+								"{{url}}pedidos"
+							],
+							"path": [
+								"JNeof"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Encuesta",
+			"item": [
+				{
+					"name": "EnviarEncuesta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

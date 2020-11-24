@@ -1,0 +1,25 @@
+{
+    "name": "ignir/clase9",
+    "authors": [
+        {
+            "name": "Ignacio Rolon",
+            "email": "ignirolon@gmail.com"
+        }
+    ],
+    "require": {
+        "firebase/php-jwt": "^5.2",
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.2",
+        "illuminate/database": "^8.14",
+        "illuminate/events": "^8.14",
+        "illuminate/support": "^8.14"
+    },
+    "autoload": {
+        "psr-4": {
+            "Clases\\" : "app",
+            "App\\" : "src",
+            "Config\\" : "config"
+        }
+    }
+
+}
